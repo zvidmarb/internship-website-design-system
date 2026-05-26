@@ -3,10 +3,10 @@ hide:
   - toc
 ---
 
-# **Toggles**
+# Toggles
 ## Class
 === "Selected No Icon"
-    <div class="btn-grid-1">
+    <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
             <label class='toggle' >
                 <input type='checkbox' checked>
@@ -16,9 +16,9 @@ hide:
         </div>
     </div>
     <br>
-    ## **States**
+    ## States
     === "Default"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle' >
                     <input type='checkbox' checked>
@@ -27,7 +27,7 @@ hide:
             </div>
         </div>
     === "Hover"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle hover' >
                     <input type='checkbox' checked>
@@ -36,7 +36,7 @@ hide:
             </div>
         </div>
     === "Focused"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle focus'>
                     <input type='checkbox'checked>
@@ -45,7 +45,7 @@ hide:
             </div>
         </div>
     === "Pressed"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle active'>
                     <input type='checkbox'checked>
@@ -54,7 +54,7 @@ hide:
             </div>
         </div>
     === "Disabled"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle' >
                     <input type='checkbox' checked disabled>
@@ -63,16 +63,13 @@ hide:
             </div>
         </div>
     <br>
-
-
     ## Code
     === "CSS"
         ``` css
         --8<-- "components/sass/components/_toggle.scss:toggle"
         ```
-
     === "HTML"
-        ``` { .html .copy }
+        ``` html
         <label class='toggle'>
             <input type='checkbox' checked>
             <span class='slider'></span>
@@ -80,9 +77,9 @@ hide:
         ```
 
 === "Selected w/ Icon"
-    <div class="btn-grid-1">
+    <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
-            <label class='toggle' >
+            <label class='toggle'>
                 <input type='checkbox' checked>
                 <span class='slider'>
                     :material-check:{.checked}
@@ -92,11 +89,11 @@ hide:
         </div>
     </div>
     <br>
-    ## **States**
+    ## States
     === "Default"
         <div class="btn-grid-1">
             <div class="grid-items"> 
-                <label class='toggle' >
+                <label class='toggle'>
                     <input type='checkbox' checked>
                     <span class='slider'>
                       :material-check:{.checked}
@@ -106,9 +103,9 @@ hide:
             </div>
         </div>
     === "Hover"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle hover' >
+                <label class='toggle hover'>
                     <input type='checkbox' checked>
                     <span class='slider'>
                       :material-check:{.checked}
@@ -118,7 +115,7 @@ hide:
             </div>
         </div>
     === "Focused"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle focus'>
                     <input type='checkbox'checked>
@@ -130,7 +127,7 @@ hide:
             </div>
         </div>
     === "Pressed"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle active'>
                     <input type='checkbox'checked>
@@ -142,7 +139,7 @@ hide:
             </div>
         </div>
     === "Disabled"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle' >
                     <input type='checkbox' checked disabled>
@@ -154,7 +151,7 @@ hide:
             </div>
         </div>
     <br>
-
+    ## Code
     === "CSS" 
         ``` css
         --8<-- "components/sass/components/_toggle.scss:toggle-icon"
@@ -172,7 +169,7 @@ hide:
         ```
 
 === "De-Selected No Icon"
-    <div class="btn-grid-1">
+    <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
             <label class='toggle' >
                 <input type='checkbox'>
@@ -182,9 +179,9 @@ hide:
         </div>
     </div>
     <br>
-    ## **States**
+    ## States
     === "Default"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle' >
                     <input type='checkbox'>
@@ -193,7 +190,7 @@ hide:
             </div>
         </div>
     === "Hover"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle hover' >
                     <input type='checkbox'>
@@ -202,7 +199,7 @@ hide:
             </div>
         </div>
     === "Focused"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle focus'>
                     <input type='checkbox'>
@@ -211,7 +208,7 @@ hide:
             </div>
         </div>
     === "Pressed"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle active'>
                     <input type='checkbox'>
@@ -220,19 +217,16 @@ hide:
             </div>
         </div>
     === "Disabled"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle' >
+                <label class='toggle'>
                     <input type='checkbox' disabled>
                     <span class='slider'></span>
                 </label>
             </div>
         </div>
     <br>
-
-
     ## Code
-
     === "CSS"
         ``` css
         --8<-- "components/sass/components/_toggle.scss:toggle"
@@ -246,10 +240,10 @@ hide:
       ```
 
 === "De-Selected w/ Icon"
-    <div class="btn-grid-1">
+    <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
             <label class='toggle' >
-                <input type='checkbox' >
+                <input type='checkbox'>
                 <span class='slider'>
                     :material-check:{.checked}
                     :octicons-x-16:{.unchecked}
@@ -258,11 +252,11 @@ hide:
         </div>
     </div>
     <br>
-    ## **States**
+    ## States
     === "Default"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle' >
+                <label class='toggle'>
                     <input type='checkbox'>
                     <span class='slider'>
                       :material-check:{.checked}
@@ -272,7 +266,7 @@ hide:
             </div>
         </div>
     === "Hover"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle hover' >
                     <input type='checkbox'>
@@ -284,7 +278,7 @@ hide:
             </div>
         </div>
     === "Focused"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle focus'>
                     <input type='checkbox'>
@@ -296,7 +290,7 @@ hide:
             </div>
         </div>
     === "Pressed"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle active'>
                     <input type='checkbox'>
@@ -308,7 +302,7 @@ hide:
             </div>
         </div>
     === "Disabled"
-        <div class="btn-grid-1">
+        <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle' >
                     <input type='checkbox' disabled>
@@ -320,12 +314,11 @@ hide:
             </div>
         </div>
     <br>
-
+    ## Code
     === "CSS"
         ``` css
         --8<-- "components/sass/components/_toggle.scss:toggle-icon"
         ```
-
     === "HTML"
         ``` html
         <label class='toggle' >
