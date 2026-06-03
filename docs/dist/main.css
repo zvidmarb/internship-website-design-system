@@ -49,7 +49,6 @@
   --radio-disabled-stroke: gray;
   --radio-button-size: 2.125rem;
   --dropdown-divider-color: #C6C6C6;
-  --dropdown-divider-color: #C6C6C6;
   --tab-text-color: #0D5761;
   --tab-underline-color: #0D5761;
   --tab-hover-color: #0D5761;
@@ -374,6 +373,9 @@
   --token-menu-item-label-text: var(--token-on-surface);
   --token-menu-item-hover-state-layer: var(--token-state-hover-layer);
   --token-menu-item-focus-state-layer: var(--token-state-focus-layer);
+  /* ------------------------------------------------------------
+    Toggle Component Tokens
+  ------------------------------------------------------------ */
 }
 
 body {
@@ -431,6 +433,21 @@ body {
   /* ============================================================
      Base Button
      ============================================================ */
+  /* ============================================================
+     Filled
+     ============================================================ */
+  /* ============================================================
+     Outline
+     ============================================================ */
+  /* ============================================================
+     Tonal
+     ============================================================ */
+  /* ============================================================
+     Text
+     ============================================================ */
+  /* ============================================================
+     X-Large (size modifier)
+     ============================================================ */
 }
 [data-theme] .button {
   appearance: none;
@@ -465,11 +482,6 @@ body {
   cursor: not-allowed;
   pointer-events: none;
 }
-[data-theme] {
-  /* ============================================================
-     Filled
-     ============================================================ */
-}
 [data-theme] .button-filled {
   background-color: var(--token-button-filled-bg);
   color: var(--token-button-filled-text);
@@ -486,11 +498,6 @@ body {
 [data-theme] .button-filled:disabled, [data-theme] .button-filled.disabled {
   background-color: var(--token-button-disabled-bg);
   color: var(--token-button-disabled-text);
-}
-[data-theme] {
-  /* ============================================================
-     Outline
-     ============================================================ */
 }
 [data-theme] .button-outline {
   background-color: transparent;
@@ -510,11 +517,6 @@ body {
   border-color: var(--token-outline-variant);
   color: var(--token-button-disabled-text);
 }
-[data-theme] {
-  /* ============================================================
-     Tonal
-     ============================================================ */
-}
 [data-theme] .button-tonal {
   background-color: var(--token-button-tonal-bg);
   color: var(--token-button-tonal-text);
@@ -532,11 +534,6 @@ body {
   background-color: var(--token-button-disabled-bg);
   color: var(--token-button-disabled-text);
 }
-[data-theme] {
-  /* ============================================================
-     Text
-     ============================================================ */
-}
 [data-theme] .button-text {
   background-color: transparent;
   color: var(--token-button-text-color);
@@ -553,11 +550,6 @@ body {
 [data-theme] .button-text:disabled, [data-theme] .button-text.disabled {
   background-color: var(--token-button-disabled-bg);
   color: var(--token-button-disabled-text);
-}
-[data-theme] {
-  /* ============================================================
-     X-Large (size modifier)
-     ============================================================ */
 }
 [data-theme] .button-xl {
   font-size: 1.5rem;
@@ -676,13 +668,25 @@ body {
   color: var(--token-radio-label-color-disabled);
 }
 
+[data-theme] {
+  /* ================= FIELD ================= */
+  /* ================= LABEL ================= */
+  /* ================= ICONS ================= */
+  /* ================= ICON PADDING ================= */
+  /* ================= SUPPORTING TEXT ================= */
+  /* ================= HOVER STATES ================= */
+  /* ================= FOCUS STATES ================= */
+  /* ================= ERROR STATES ================= */
+  /* Outlined error */
+  /* ================= DISABLED STATES ================= */
+  /* Outlined disabled */
+  /* ================= OUTLINED ================= */
+  /* ================= DEMO BOX ================= */
+}
 [data-theme] .input-wrapper {
   position: relative;
   width: var(--token-input-width);
   font-family: var(--text-font-stack);
-}
-[data-theme] {
-  /* ================= FIELD ================= */
 }
 [data-theme] .input-field {
   width: 100%;
@@ -704,9 +708,6 @@ body {
 [data-theme] .input-field::placeholder {
   color: transparent;
 }
-[data-theme] {
-  /* ================= LABEL ================= */
-}
 [data-theme] .input-label {
   position: absolute;
   left: 16px;
@@ -718,9 +719,6 @@ body {
   color: var(--token-input-label-color-focus);
   pointer-events: none;
   transition: 0.15s ease;
-}
-[data-theme] {
-  /* ================= ICONS ================= */
 }
 [data-theme] .input-icon {
   position: absolute;
@@ -743,9 +741,6 @@ body {
 [data-theme] .input-icon.trailing {
   right: 12px;
 }
-[data-theme] {
-  /* ================= ICON PADDING ================= */
-}
 [data-theme] .input-field.leading-icon {
   padding-left: 52px;
 }
@@ -761,9 +756,6 @@ body {
 [data-theme] .input-field:disabled ~ .input-icon {
   color: var(--token-input-icon-color-disabled);
 }
-[data-theme] {
-  /* ================= SUPPORTING TEXT ================= */
-}
 [data-theme] .input-helper {
   margin-top: 4px;
   margin-left: 16px;
@@ -776,18 +768,12 @@ body {
 [data-theme] .input-field:disabled ~ .input-helper {
   color: var(--token-input-supporting-color-disabled);
 }
-[data-theme] {
-  /* ================= HOVER STATES ================= */
-}
 [data-theme] .input-field.is-hover:hover {
   background: var(--token-input-filled-background-hover);
   border-bottom-color: var(--token-input-active-indicator-hover);
 }
 [data-theme] .input-wrapper.input-outlined .input-field.is-hover:hover {
   border-color: var(--token-input-outline-hover);
-}
-[data-theme] {
-  /* ================= FOCUS STATES ================= */
 }
 [data-theme] .input-field.is-focus:focus {
   border-bottom: 3px solid var(--token-input-active-indicator-focus);
@@ -801,9 +787,6 @@ body {
 [data-theme] .input-wrapper.input-outlined .input-field.is-focus:focus ~ .input-label {
   color: var(--token-input-label-color-focus);
 }
-[data-theme] {
-  /* ================= ERROR STATES ================= */
-}
 [data-theme] .input-field.error {
   border-bottom: 3px solid var(--token-input-active-indicator-error);
 }
@@ -816,14 +799,8 @@ body {
 [data-theme] .input-field.error ~ .input-icon.trailing {
   color: var(--token-input-icon-color-error);
 }
-[data-theme] {
-  /* Outlined error */
-}
 [data-theme] .input-wrapper.input-outlined .input-field.error {
   border: 3px solid var(--token-input-outline-error);
-}
-[data-theme] {
-  /* ================= DISABLED STATES ================= */
 }
 [data-theme] .input-field:disabled {
   border-bottom-color: var(--token-input-active-indicator-disabled);
@@ -839,14 +816,8 @@ body {
 [data-theme] .input-field:disabled ~ .input-icon {
   color: var(--token-input-icon-color-disabled);
 }
-[data-theme] {
-  /* Outlined disabled */
-}
 [data-theme] .input-wrapper.input-outlined .input-field:disabled {
   border-color: var(--token-input-outline-disabled);
-}
-[data-theme] {
-  /* ================= OUTLINED ================= */
 }
 [data-theme] .input-wrapper.input-outlined .input-field {
   background: #fff;
@@ -873,9 +844,6 @@ body {
 }
 [data-theme] .input-wrapper.input-outlined .input-field.leading-icon ~ .input-label {
   left: 16px;
-}
-[data-theme] {
-  /* ================= DEMO BOX ================= */
 }
 [data-theme] .state-box {
   width: 100%;
@@ -927,17 +895,17 @@ body {
 .toggle {
   position: relative;
   display: inline-block;
-  width: 52px;
-  height: 32px;
-  padding: 2px 4px;
+  width: 3.25rem;
+  height: 2rem;
+  padding: 0.125rem 0.25rem;
   color: #ffffff;
   background-color: #E7F0F1;
-  border: 2px solid #0D5761;
-  border-radius: 100px;
+  border: 0.125rem solid #0D5761;
+  border-radius: 6.25rem;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
-.toggle input {
+.toggle .check {
   opacity: 0;
   width: 0;
   height: 0;
@@ -945,10 +913,10 @@ body {
 .toggle .slider {
   position: absolute;
   cursor: pointer;
-  left: 6px;
-  bottom: 6px;
-  height: 16px;
-  width: 16px;
+  left: 0.375rem;
+  bottom: 0.375rem;
+  height: 1rem;
+  width: 1rem;
   background-color: #0D5761;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -958,21 +926,21 @@ body {
   justify-content: center;
 }
 
-.toggle:hover input:not(:disabled) + .slider,
-.toggle:focus input:not(:disabled) + .slider,
-.toggle.hover input:not(:disabled) + .slider,
-.toggle.focus input:not(:disabled) + .slider {
+.toggle:hover .checkbox:not(:disabled) + .slider,
+.toggle:focus .checkbox:not(:disabled) + .slider,
+.toggle.hover .checkbox:not(:disabled) + .slider,
+.toggle.focus .checkbox:not(:disabled) + .slider {
   box-shadow: 0 0 0 8px rgba(160, 196, 201, 0.5019607843);
 }
-.toggle:hover input:not(:disabled):checked + .slider,
-.toggle:focus input:not(:disabled):checked + .slider,
-.toggle.hover input:not(:disabled):checked + .slider,
-.toggle.focus input:not(:disabled):checked + .slider {
+.toggle:hover .checkbox:not(:disabled):checked + .slider,
+.toggle:focus .checkbox:not(:disabled):checked + .slider,
+.toggle.hover .checkbox:not(:disabled):checked + .slider,
+.toggle.focus .checkbox:not(:disabled):checked + .slider {
   box-shadow: 0 0 0 6px rgba(160, 196, 201, 0.5019607843);
 }
 
-.toggle:active input:not(:disabled) + .slider,
-.toggle.active input:not(:disabled) + .slider {
+.toggle:active .checkbox:not(:disabled) + .slider,
+.toggle.active .checkbox:not(:disabled) + .slider {
   height: 28px;
   width: 28px;
   bottom: 0px;
@@ -980,7 +948,7 @@ body {
   box-shadow: 0 0 0 6px rgba(160, 196, 201, 0.5019607843);
 }
 
-.toggle input:checked + .slider {
+.toggle .checkbox:checked + .slider {
   background-color: #247984;
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
@@ -992,43 +960,43 @@ body {
   background-color: #ffffff;
 }
 
-.toggle:has(input:checked) {
+.toggle:has(.checkbox:checked) {
   background-color: #247984;
   border-color: transparent;
 }
 
-.toggle input:disabled + .slider {
+.toggle .checkbox:disabled + .slider {
   box-shadow: none;
   background-color: #6F6F6F;
   cursor: not-allowed;
   color: #C6C6C6;
 }
 
-.toggle:has(input:disabled) {
+.toggle:has(.checkbox:disabled) {
   cursor: not-allowed;
   border-color: #C6C6C6;
   background-color: #DDD;
 }
 
-.toggle:has(input:disabled:checked) {
+.toggle:has(.checkbox:disabled:checked) {
   background-color: #6F6F6F;
   border-color: #6F6F6F;
 }
 
-.toggle input:disabled:checked + .slider {
+.toggle .checkbox:disabled:checked + .slider {
   background-color: #DDD;
   color: #6F6F6F;
 }
 
-.toggle input:checked + .slider span {
+.toggle .checkbox:checked + .slider span {
   color: #0D5761;
 }
 
-.toggle input:disabled + .slider span {
+.toggle .checkbox:disabled + .slider span {
   color: #DDD;
 }
 
-.toggle input:disabled:checked + .slider span {
+.toggle .checkbox:disabled:checked + .slider span {
   color: #6F6F6F;
 }
 
@@ -1036,10 +1004,10 @@ body {
   display: none;
 }
 
-.toggle input:checked + .slider span.checked {
+.toggle .checkbox:checked + .slider span.checked {
   display: block;
 }
-.toggle input:checked + .slider span.unchecked {
+.toggle .checkbox:checked + .slider span.unchecked {
   display: none;
 }
 
@@ -1354,21 +1322,21 @@ label {
 /* --8<-- [start:dropdown-base] */
 [data-theme] {
   /* ================= WRAPPER ================= */
+  /* if dropdown also carries input-wrapper styles, remove inherited side padding */
+  /* ================= FIELD ================= */
+  /* ================= MENU ================= */
+  /* ================= OPEN STATE ================= */
+  /* ================= OPTIONS ================= */
+  /* ================= MKDOCS HARD RESET ================= */
 }
 [data-theme] .dropdown-wrapper {
   position: relative;
   width: var(--token-input-width);
   font-family: var(--text-font-stack);
 }
-[data-theme] {
-  /* if dropdown also carries input-wrapper styles, remove inherited side padding */
-}
 [data-theme] .dropdown-wrapper.input-wrapper {
   padding-left: 0 !important;
   padding-right: 0 !important;
-}
-[data-theme] {
-  /* ================= FIELD ================= */
 }
 [data-theme] .dropdown-field {
   position: relative;
@@ -1381,9 +1349,6 @@ label {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-[data-theme] {
-  /* ================= MENU ================= */
 }
 [data-theme] .dropdown-wrapper .dropdown-menu {
   position: absolute;
@@ -1402,14 +1367,8 @@ label {
   z-index: 20;
   overflow: hidden;
 }
-[data-theme] {
-  /* ================= OPEN STATE ================= */
-}
 [data-theme] .dropdown-wrapper.is-open .dropdown-menu {
   display: block;
-}
-[data-theme] {
-  /* ================= OPTIONS ================= */
 }
 [data-theme] .dropdown-option {
   display: flex;
@@ -1430,9 +1389,6 @@ label {
 }
 [data-theme] .dropdown-option.is-selected {
   background: rgba(36, 121, 132, 0.1);
-}
-[data-theme] {
-  /* ================= MKDOCS HARD RESET ================= */
 }
 [data-theme] .md-typeset .dropdown-wrapper ul.dropdown-menu,
 [data-theme] .md-typeset .dropdown-wrapper ul.dropdown-menu li {
@@ -1575,6 +1531,7 @@ label {
   cursor: pointer;
   transition: 0.3s;
   /* pageicon can be <a> or <button> depending on JS */
+  /* focus is usually on inner button, so use focus-within */
 }
 [data-theme] .pagination .pagination-items .pagebutton .pageicon {
   display: flex;
@@ -1591,9 +1548,6 @@ label {
 }
 [data-theme] .pagination .pagination-items .pagebutton:hover, [data-theme] .pagination .pagination-items .pagebutton.hover {
   background-color: var(--token-pagination-bg-hover);
-}
-[data-theme] .pagination .pagination-items .pagebutton {
-  /* focus is usually on inner button, so use focus-within */
 }
 [data-theme] .pagination .pagination-items .pagebutton:focus-within, [data-theme] .pagination .pagination-items .pagebutton.focused {
   background-color: var(--token-pagination-bg-focus);

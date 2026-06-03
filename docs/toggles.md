@@ -8,8 +8,8 @@ hide:
 === "Selected No Icon"
     <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
-            <label class='toggle' >
-                <input type='checkbox' checked>
+            <label class='toggle -selected'>
+                <input type='checkbox' class="check" checked>
                 <span class='slider'>
                 </span>
             </label>
@@ -20,8 +20,8 @@ hide:
     === "Default"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle' >
-                    <input type='checkbox' checked>
+                <label class='toggle -selected'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'></span>
                 </label>
             </div>
@@ -29,8 +29,8 @@ hide:
     === "Hover"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle hover' >
-                    <input type='checkbox' checked>
+                <label class='toggle -selected hover'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'></span>
                 </label>
             </div>
@@ -38,8 +38,8 @@ hide:
     === "Focused"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle focus'>
-                    <input type='checkbox'checked>
+                <label class='toggle -selected focus'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'></span>
                 </label>
             </div>
@@ -47,8 +47,8 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle active'>
-                    <input type='checkbox'checked>
+                <label class='toggle-selected active'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'></span>
                 </label>
             </div>
@@ -56,8 +56,8 @@ hide:
     === "Disabled"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle' >
-                    <input type='checkbox' checked disabled>
+                <label class='toggle-selected disabled'>
+                    <input type='checkbox' class="check" checked disabled>
                     <span class='slider'></span>
                 </label>
             </div>
@@ -70,8 +70,8 @@ hide:
         ```
     === "HTML"
         ``` html
-        <label class='toggle'>
-            <input type='checkbox' checked>
+        <label class='toggle -selected'>
+            <input type='checkbox' class="check" checked>
             <span class='slider'></span>
         </label>
         ```
@@ -79,11 +79,11 @@ hide:
 === "Selected w/ Icon"
     <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
-            <label class='toggle'>
-                <input type='checkbox' checked>
+            <label class='toggle-icon -selected'>
+                <input type='checkbox' class="check" checked>
                 <span class='slider'>
-                    :material-check:{.checked}
-                    :octicons-x-16:{.unchecked}
+                    :material-check:{.icon .-checked}
+                    :octicons-x-16:{.icon .-unchecked}
                 </span>
             </label>
         </div>
@@ -93,11 +93,11 @@ hide:
     === "Default"
         <div class="btn-grid-1">
             <div class="grid-items"> 
-                <label class='toggle'>
-                    <input type='checkbox' checked>
+                <label class='toggle-icon -selected'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'>
-                      :material-check:{.checked}
-                      :octicons-x-16:{.unchecked}
+                      :material-check:{.icon .-checked}
+                      :octicons-x-16:{.icon .-unchecked}
                     </span>
                 </label>
             </div>
@@ -105,11 +105,11 @@ hide:
     === "Hover"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle hover'>
-                    <input type='checkbox' checked>
+                <label class='toggle-icon -selected hover'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'>
-                      :material-check:{.checked}
-                      :octicons-x-16:{.unchecked}
+                      :material-check:{.icon .-checked}
+                      :octicons-x-16:{.icon .-unchecked}
                     </span>
                 </label>
             </div>
@@ -117,11 +117,11 @@ hide:
     === "Focused"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle focus'>
-                    <input type='checkbox'checked>
+                <label class='toggle-icon -selected focus'>
+                    <input type='checkbox' class="check"checked>
                     <span class='slider'>
-                        :material-check:{.checked}
-                        :octicons-x-16:{.unchecked}
+                        :material-check:{.icon .-checked}
+                        :octicons-x-16:{.icon .-unchecked}
                     </span>                
                 </label>
             </div>
@@ -129,11 +129,11 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle active'>
-                    <input type='checkbox'checked>
+                <label class='toggle-icon -selected active'>
+                    <input type='checkbox' class="check" checked>
                     <span class='slider'>
-                        :material-check:{.checked}
-                        :octicons-x-16:{.unchecked}
+                        :material-check:{.icon .-checked}
+                        :octicons-x-16:{.icon .-unchecked}
                     </span>   
                 </label>
             </div>
@@ -141,11 +141,11 @@ hide:
     === "Disabled"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle' >
-                    <input type='checkbox' checked disabled>
+                <label class='toggle-icon -selected disabled' >
+                    <input type='checkbox' class="check" checked disabled>
                     <span class='slider'>
-                        :material-check:{.checked}
-                        :octicons-x-16:{.unchecked}
+                        :material-check:{.icon .-checked}
+                        :octicons-x-16:{.icon .-unchecked}
                     </span>   
                 </label>
             </div>
@@ -154,16 +154,15 @@ hide:
     ## Code
     === "CSS" 
         ``` css
-        --8<-- "components/sass/components/_toggle.scss:toggle-icon"
+        --8<-- "components/sass/components/_toggle.scss:toggle-icon-selected"
         ```
-
     === "HTML"
         ``` html  
-        <label class='toggle' >
-            <input type='checkbox' checked>
+        <label class='toggle-icon -selected' >
+            <input type='checkbox' class="check" checked>
             <span class='slider'>
-                :material-check:{.checked}
-                :octicons-x-16:{.unchecked}
+                :material-check:{.icon .-checked}
+                :octicons-x-16:{.icon .-unchecked}
             </span>
         </label>
         ```
@@ -172,7 +171,7 @@ hide:
     <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
             <label class='toggle' >
-                <input type='checkbox'>
+                <input type='checkbox' class="check">
                 <span class='slider'>
                 </span>
             </label>
@@ -184,7 +183,7 @@ hide:
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle' >
-                    <input type='checkbox'>
+                    <input type='checkbox' class="check">
                     <span class='slider'></span>
                 </label>
             </div>
@@ -193,7 +192,7 @@ hide:
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle hover' >
-                    <input type='checkbox'>
+                    <input type='checkbox' class="check">
                     <span class='slider'></span>
                 </label>
             </div>
@@ -202,7 +201,7 @@ hide:
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
                 <label class='toggle focus'>
-                    <input type='checkbox'>
+                    <input type='checkbox' class="check">
                     <span class='slider'></span>
                 </label>
             </div>
@@ -219,8 +218,8 @@ hide:
     === "Disabled"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle'>
-                    <input type='checkbox' disabled>
+                <label class='toggle disabled'>
+                    <input type='checkbox' class="check" disabled>
                     <span class='slider'></span>
                 </label>
             </div>
@@ -234,7 +233,7 @@ hide:
     === "HTML"
       ``` html
       <label class='toggle'>
-          <input type='checkbox'>
+          <input type='checkbox' class="check">
           <span class='slider'></span>
       </label>
       ```
@@ -242,11 +241,11 @@ hide:
 === "De-Selected w/ Icon"
     <div class="btn-grid-1" data-theme>
         <div class="grid-items"> 
-            <label class='toggle' >
-                <input type='checkbox'>
+            <label class='toggle-icon' >
+                <input type='checkbox' class="check">
                 <span class='slider'>
-                    :material-check:{.checked}
-                    :octicons-x-16:{.unchecked}
+                    :material-check:{.icon .-checked}
+                    :octicons-x-16:{.icon .-unchecked}
                 </span>
             </label>
         </div>
@@ -256,11 +255,11 @@ hide:
     === "Default"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle'>
-                    <input type='checkbox'>
+                <label class='toggle-icon'>
+                    <input type='checkbox' class="check">
                     <span class='slider'>
-                      :material-check:{.checked}
-                      :octicons-x-16:{.unchecked}
+                      :material-check:{.icon .-checked}
+                      :octicons-x-16:{.icon .-unchecked}
                     </span>
                 </label>
             </div>
@@ -268,11 +267,11 @@ hide:
     === "Hover"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle hover' >
-                    <input type='checkbox'>
+                <label class='toggle-icon hover' >
+                    <input type='checkbox' class="check">
                     <span class='slider'>
-                      :material-check:{.checked}
-                      :octicons-x-16:{.unchecked}
+                      :material-check:{.icon .-checked}
+                      :octicons-x-16:{.icon .-unchecked}
                     </span>
                 </label>
             </div>
@@ -280,11 +279,11 @@ hide:
     === "Focused"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle focus'>
-                    <input type='checkbox'>
+                <label class='toggle-icon focus'>
+                    <input type='checkbox' class="check">
                     <span class='slider'>
-                        :material-check:{.checked}
-                        :octicons-x-16:{.unchecked}
+                        :material-check:{.icon .-checked}
+                        :octicons-x-16:{.icon .-unchecked}
                     </span>                
                 </label>
             </div>
@@ -292,11 +291,11 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle active'>
-                    <input type='checkbox'>
+                <label class='toggle-icon active'>
+                    <input type='checkbox' class="check">
                     <span class='slider'>
-                        :material-check:{.checked}
-                        :octicons-x-16:{.unchecked}
+                        :material-check:{.icon .-checked}
+                        :octicons-x-16:{.icon .-unchecked}
                     </span>   
                 </label>
             </div>
@@ -304,11 +303,11 @@ hide:
     === "Disabled"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle' >
-                    <input type='checkbox' disabled>
+                <label class='toggle-icon disabled'>
+                    <input type='checkbox' class="check" disabled>
                     <span class='slider'>
-                        :material-check:{.checked}
-                        :octicons-x-16:{.unchecked}
+                        :material-check:{.icon .-checked}
+                        :octicons-x-16:{.icon .-unchecked}
                     </span>   
                 </label>
             </div>
@@ -321,11 +320,11 @@ hide:
         ```
     === "HTML"
         ``` html
-        <label class='toggle' >
-            <input type='checkbox'>
+        <label class='toggle-icon' >
+            <input type='checkbox' class="check">
             <span class='slider'>
-                :material-check:{.checked}
-                :octicons-x-16:{.unchecked}
+                :material-check:{.icon .-checked}
+                :octicons-x-16:{.icon .-unchecked}
             </span>
         </label>
         ```
