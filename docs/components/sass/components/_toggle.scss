@@ -39,6 +39,12 @@
   }
 }
 
+.toggle.-selected {
+  & .slider {
+    
+  }
+}
+
 // --8<-- [start:toggle-icon]
 
 .toggle:hover,
