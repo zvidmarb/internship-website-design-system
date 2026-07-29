@@ -60,26 +60,19 @@ html {
 .toggle {
   &:hover,
     &.hover {
-      background-color: var(--token-chip-color-state-layer-hovered);
     }
 
     &:focus,
     &.focus {
-      background-color: var(--token-chip-color-state-layer-focused);
     }
 
     &:active,
     &.pressed {
-      background-color: var(--token-chip-color-state-layer-pressed);
     }
 
     &:disabled, 
     &.disabled {
-      border-color: var(--token-chip-color-stroke-disabled);
       pointer-events:none;
-      .label, .icon {
-        color: var(--token-chip-color-content-disabled) !important;
-      }
     }
 }
 
@@ -112,11 +105,11 @@ html {
   & .slider{
     position: relative;
     cursor: pointer;
-    height: 1rem;
-    width: 1rem;
+    height: 1.5rem;
+    width: 1.5rem;
     margin-left: 0;
     margin-right: auto;
-    padding: 0.5rem;
+    padding: 0.75rem;
     background-color: $color-darkgreen;
     -webkit-transition: $toggle-animation-duration;
     transition: $toggle-animation-duration;
@@ -124,94 +117,81 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
+  }
+
+  & .icon {
+    width: 1rem;
+    height: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    flex-shrink: 0;
   }
 }
-.toggle-icon:hover,
-.toggle-icon:focus,
-.toggle-icon.hover,
-.toggle-icon.focus {
-  & .checkbox:not(:disabled) + .slider {
-    box-shadow: 0 0 0 8px $toggle-shadow-color;
+
+.toggle-icon.-selected {
+  background-color: $color-darkgreen;
+  border: none;
+
+  & .slider {
+    margin-left: auto;
+    margin-right: 0;
+    background-color: $color-white;
+    padding: 0.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    box-sizing: border-box;
   }
-  & .checkbox:not(:disabled):checked + .slider {
-    box-shadow: 0 0 0 6px $toggle-shadow-color;
+
+  & .icon {
+    color: $color-darkgreen;
   }
 }
 
-/*.toggle:active,
-.toggle.active {
-  & .checkbox:not(:disabled) + .slider {
-    height: 28px;
-    width: 28px;
-    bottom: 0px;
-    left: 0px;
-    box-shadow: 0 0 0 6px $toggle-shadow-color;
-  }
-}*/
+.toggle-icon {
+  &:hover,
+    &.hover {
+    }
 
-/*.toggle .checkbox:checked + .slider {
-  background-color: $toggle-color;
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-  height: 24px;
-  width: 24px;
-  bottom: 2px;
-  left: 2px;
-  background-color: $color-white;
-}*/
+    &:focus,
+    &.focus {
+    }
 
-.toggle:has(.checkbox:checked) {
-  background-color: $toggle-color;
-  border-color: transparent;
+    &:active,
+    &.pressed {
+    }
+
+    &:disabled, 
+    &.disabled {
+      pointer-events:none;
+    }
 }
-
-.toggle .checkbox:disabled + .slider{
-  box-shadow: none;
-  background-color: $color-old-mid-grey;
-  cursor: not-allowed;
-  color: $color-old-grey;
-}
-
-.toggle:has(.checkbox:disabled) {
-  cursor: not-allowed;
-  border-color: $color-old-grey;
-  background-color: $color-old-light-grey;
-}
-
-.toggle:has(.checkbox:disabled:checked) {
-  background-color: $color-old-mid-grey;
-  border-color: $color-old-mid-grey;
-}
-
-.toggle .checkbox:disabled:checked + .slider {
-  background-color: $color-old-light-grey;
-  color: $color-old-mid-grey;
-}
-
-// --8<-- [end:toggle]
 // Additional Styles for Slider Icons
-.toggle .checkbox:checked + .slider span {
-  color: $color-darkgreen;
-}
 
-.toggle .checkbox:disabled + .slider span {
-  color: $color-old-light-grey;
-}
-
-.toggle .checkbox:disabled:checked + .slider span {
-  color: $color-old-mid-grey;
-}
-
-.toggle .slider span.checked {
+.toggle-icon .slider .icon {
   display: none;
 }
-.toggle .checkbox:checked + .slider {
-  & span.checked {
-    display: block;
+
+.toggle-icon .slider .icon.-unchecked {
+  display: inline-flex;
+}
+
+.toggle-icon.-selected .slider .icon.-checked {
+  display: inline-flex;
+}
+
+.toggle-icon.-selected .slider .icon.-unchecked {
+  display: none;
+}
+
+.toggle-icon .checkbox:checked + .slider {
+  & .icon.-checked {
+    display: inline-flex;
   }
   
-  & span.unchecked {
+  & .icon.-unchecked {
     display: none;
   }
 }

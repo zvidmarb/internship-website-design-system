@@ -1023,21 +1023,8 @@ html {
   height: 1.5rem;
 }
 
-.toggle:hover, .toggle.hover {
-  background-color: var(--token-chip-color-state-layer-hovered);
-}
-.toggle:focus, .toggle.focus {
-  background-color: var(--token-chip-color-state-layer-focused);
-}
-.toggle:active, .toggle.pressed {
-  background-color: var(--token-chip-color-state-layer-pressed);
-}
 .toggle:disabled, .toggle.disabled {
-  border-color: var(--token-chip-color-stroke-disabled);
   pointer-events: none;
-}
-.toggle:disabled .label, .toggle:disabled .icon, .toggle.disabled .label, .toggle.disabled .icon {
-  color: var(--token-chip-color-content-disabled) !important;
 }
 
 .toggle-icon {
@@ -1062,11 +1049,11 @@ html {
 .toggle-icon .slider {
   position: relative;
   cursor: pointer;
-  height: 1rem;
-  width: 1rem;
+  height: 1.5rem;
+  width: 1.5rem;
   margin-left: 0;
   margin-right: auto;
-  padding: 0.5rem;
+  padding: 0.75rem;
   background-color: #0D5761;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -1074,90 +1061,59 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+}
+.toggle-icon .icon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  flex-shrink: 0;
 }
 
-.toggle-icon:hover .checkbox:not(:disabled) + .slider,
-.toggle-icon:focus .checkbox:not(:disabled) + .slider,
-.toggle-icon.hover .checkbox:not(:disabled) + .slider,
-.toggle-icon.focus .checkbox:not(:disabled) + .slider {
-  box-shadow: 0 0 0 8px rgba(160, 196, 201, 0.5019607843);
+.toggle-icon.-selected {
+  background-color: #0D5761;
+  border: none;
 }
-.toggle-icon:hover .checkbox:not(:disabled):checked + .slider,
-.toggle-icon:focus .checkbox:not(:disabled):checked + .slider,
-.toggle-icon.hover .checkbox:not(:disabled):checked + .slider,
-.toggle-icon.focus .checkbox:not(:disabled):checked + .slider {
-  box-shadow: 0 0 0 6px rgba(160, 196, 201, 0.5019607843);
+.toggle-icon.-selected .slider {
+  margin-left: auto;
+  margin-right: 0;
+  background-color: #ffffff;
+  padding: 0.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  box-sizing: border-box;
 }
-
-/*.toggle:active,
-.toggle.active {
-  & .checkbox:not(:disabled) + .slider {
-    height: 28px;
-    width: 28px;
-    bottom: 0px;
-    left: 0px;
-    box-shadow: 0 0 0 6px $toggle-shadow-color;
-  }
-}*/
-/*.toggle .checkbox:checked + .slider {
-  background-color: $toggle-color;
-  -webkit-transform: translateX(20px);
-  -ms-transform: translateX(20px);
-  transform: translateX(20px);
-  height: 24px;
-  width: 24px;
-  bottom: 2px;
-  left: 2px;
-  background-color: $color-white;
-}*/
-.toggle:has(.checkbox:checked) {
-  background-color: #247984;
-  border-color: transparent;
-}
-
-.toggle .checkbox:disabled + .slider {
-  box-shadow: none;
-  background-color: #6F6F6F;
-  cursor: not-allowed;
-  color: #C6C6C6;
-}
-
-.toggle:has(.checkbox:disabled) {
-  cursor: not-allowed;
-  border-color: #C6C6C6;
-  background-color: #DDD;
-}
-
-.toggle:has(.checkbox:disabled:checked) {
-  background-color: #6F6F6F;
-  border-color: #6F6F6F;
-}
-
-.toggle .checkbox:disabled:checked + .slider {
-  background-color: #DDD;
-  color: #6F6F6F;
-}
-
-.toggle .checkbox:checked + .slider span {
+.toggle-icon.-selected .icon {
   color: #0D5761;
 }
 
-.toggle .checkbox:disabled + .slider span {
-  color: #DDD;
+.toggle-icon:disabled, .toggle-icon.disabled {
+  pointer-events: none;
 }
 
-.toggle .checkbox:disabled:checked + .slider span {
-  color: #6F6F6F;
-}
-
-.toggle .slider span.checked {
+.toggle-icon .slider .icon {
   display: none;
 }
 
-.toggle .checkbox:checked + .slider span.checked {
-  display: block;
+.toggle-icon .slider .icon.-unchecked {
+  display: inline-flex;
 }
-.toggle .checkbox:checked + .slider span.unchecked {
+
+.toggle-icon.-selected .slider .icon.-checked {
+  display: inline-flex;
+}
+
+.toggle-icon.-selected .slider .icon.-unchecked {
+  display: none;
+}
+
+.toggle-icon .checkbox:checked + .slider .icon.-checked {
+  display: inline-flex;
+}
+.toggle-icon .checkbox:checked + .slider .icon.-unchecked {
   display: none;
 }
 
