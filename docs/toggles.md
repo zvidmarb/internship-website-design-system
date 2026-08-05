@@ -47,7 +47,7 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle-selected active'>
+                <label class='toggle -selected pressed'>
                     <input type='checkbox' class="check" checked>
                     <span class='slider'></span>
                 </label>
@@ -56,7 +56,7 @@ hide:
     === "Disabled"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle-selected disabled'>
+                <label class='toggle -selected disabled'>
                     <input type='checkbox' class="check" checked disabled>
                     <span class='slider'></span>
                 </label>
@@ -209,8 +209,8 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle active'>
-                    <input type='checkbox'>
+                <label class='toggle pressed'>
+                    <input type='checkbox' class="check">
                     <span class='slider'></span>
                 </label>
             </div>

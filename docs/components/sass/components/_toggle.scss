@@ -32,7 +32,7 @@ html {
     width: 1rem;
     margin-left: 0;
     margin-right: auto;
-    padding: 0.5rem;
+    padding: 0.375rem;
     background-color: $color-darkgreen;
     -webkit-transition: $toggle-animation-duration;
     transition: $toggle-animation-duration;
@@ -40,6 +40,13 @@ html {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    &::after {
+      position: absolute;
+      padding: 0.25rem;
+      content: "";
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }
 
@@ -51,10 +58,16 @@ html {
     margin-left: auto;
     margin-right: 0;
     background-color: $color-white;
-    padding: 0.5rem;
+    padding: 0.25rem;
     width: 1.5rem;
     height: 1.5rem;
-
+    &::after {
+      position: absolute;
+      padding: 0.25rem;
+      content: "";
+      width: 3rem;
+      height: 3rem;
+    }
   }
 }
 .toggle {
@@ -68,27 +81,59 @@ html {
         opacity: 0.5;
         width: 2.5rem;
         height: 2.5rem;
-      }
-      .slider::after {
-        position: absolute;
-        content: "";
-        
-        width: 3rem;
-        height: 3rem;
+        border-radius: 50%;
       }
     }
-
-    &:focus,
-    &.focus {
-    }
-
     &:active,
     &.pressed {
+      .slider {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0;
+        left: -0.25rem;
+      }
     }
 
     &:disabled, 
     &.disabled {
-      pointer-events:none;
+      background-color: $color-old-light-grey;
+      pointer-events: none;
+      border-color: $color-old-grey;
+      & .slider {
+        background-color: $color-old-mid-grey;
+      }
+    }
+}
+.toggle-selected {
+  &:hover, &.hover, 
+    &:focus, &.focus, 
+    &:active, &.pressed {
+      .slider::before {
+        background-color: #A0C4C9;
+        position: absolute;
+        content: "";
+        opacity: 0.5;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+    }
+    &:active,
+    &.pressed {
+      .slider {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0.125rem;
+      }
+    }
+
+    &:disabled, 
+    &.disabled {
+      background-color: $color-old-mid-grey;
+      pointer-events: none;
+      & .slider {
+        background-color: $color-old-light-grey;
+      }
     }
 }
 
