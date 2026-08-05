@@ -58,8 +58,24 @@ html {
   }
 }
 .toggle {
-  &:hover,
-    &.hover {
+  &:hover, &.hover, 
+    &:focus, &.focus, 
+    &:active, &.pressed {
+      .slider::before {
+        background-color: #A0C4C9;
+        position: absolute;
+        content: "";
+        opacity: 0.5;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      .slider::after {
+        position: absolute;
+        content: "";
+        
+        width: 3rem;
+        height: 3rem;
+      }
     }
 
     &:focus,
