@@ -83,9 +83,9 @@ for (let i = 0; i < acc.length; i (unchecked)++) {
   });
 }
 
-// Reset demo radio inputs on page load
+// Reset demo inputs on page load
 document.addEventListener('DOMContentLoaded', function() {
-  const demoInputs = document.querySelectorAll('.radio > .icon');
+  const demoInputs = document.querySelectorAll('.radio > .icon, .toggle > .check, .toggle-icon > .check');
   demoInputs.forEach(input => {
     input.checked = false;
   });

@@ -129,7 +129,7 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle-icon -selected active'>
+                <label class='toggle-icon -selected pressed'>
                     <input type='checkbox' class="check" checked>
                     <span class='slider'>
                         :material-check:{.icon .-checked}
@@ -291,7 +291,7 @@ hide:
     === "Pressed"
         <div class="btn-grid-1" data-theme>
             <div class="grid-items"> 
-                <label class='toggle-icon active'>
+                <label class='toggle-icon pressed'>
                     <input type='checkbox' class="check">
                     <span class='slider'>
                         :material-check:{.icon .-checked}

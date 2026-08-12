@@ -391,12 +391,12 @@
   --accordion-desktop-paragraph-fontsize: 1rem;
   --accordion-desktop-paragraph-lineheight: 1.5;
   --accordion-desktop-paragraph-fontstyle: 400 var(--accordion-desktop-paragraph-fontsize)/var(--accordion-desktop-paragraph-lineheight)
-                                    'Roboto Regular', sans-serif;
+                                    "Roboto Regular", sans-serif;
   --accordion-desktop-paragraph-width: 29.5rem;
-  --accordion-desktop-title-fontstyle: 600 1.25rem/1.3 'Roboto Semibold', sans-serif;
+  --accordion-desktop-title-fontstyle: 600 1.25rem/1.3 "Roboto Semibold", sans-serif;
   --accordion-desktop-title-width: 25.75rem;
   --accordion-desktop-icon-size: 2.5rem;
-  --accordion-desktop-icon-fontstyle: var(--accordion-desktop-icon-size) 'Material Icons Outlined';
+  --accordion-desktop-icon-fontstyle: var(--accordion-desktop-icon-size) "Material Icons Outlined";
   --accordion-mobile-height-collapsed: 3.75rem;
   --accordion-mobile-height-expanded: calc(var(--accordion-mobile-height-collapsed)
                                         + var(--accordion-mobile-spacing-vertical-expanded)
@@ -411,12 +411,12 @@
   --accordion-mobile-paragraph-fontsize: 1rem;
   --accordion-mobile-paragraph-lineheight: 1.5;
   --accordion-mobile-paragraph-fontstyle: 400 var(--accordion-mobile-paragraph-fontsize)/var(--accordion-mobile-paragraph-lineheight)
-                                    'Roboto Regular', sans-serif;
+                                    "Roboto Regular", sans-serif;
   --accordion-mobile-paragraph-width: 16rem;
-  --accordion-mobile-title-fontstyle: 600 1.25rem/1.35 'Roboto Semibold', sans-serif;
+  --accordion-mobile-title-fontstyle: 600 1.25rem/1.35 "Roboto Semibold", sans-serif;
   --accordion-mobile-title-width: 13.25rem;
   --accordion-mobile-icon-size: 1.75rem;
-  --accordion-mobile-icon-fontstyle: var(--accordion-mobile-icon-size) 'Material Icons Outlined';
+  --accordion-mobile-icon-fontstyle: var(--accordion-mobile-icon-size) "Material Icons Outlined";
   /* ------------------------------------------------------------
     Toggle Component Tokens
   ------------------------------------------------------------ */
@@ -989,9 +989,15 @@ html {
   transition: 0.4s;
 }
 .toggle .check {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 0.125rem;
+  white-space: nowrap;
 }
 .toggle .slider {
   position: relative;
@@ -1017,11 +1023,13 @@ html {
   height: 3rem;
 }
 
-.toggle.-selected {
+.toggle:has(.check:checked),
+.toggle.-selected:has(.check:checked) {
   background-color: #0D5761;
   border: none;
 }
-.toggle.-selected .slider {
+.toggle:has(.check:checked) .slider,
+.toggle.-selected:has(.check:checked) .slider {
   margin-left: auto;
   margin-right: 0;
   background-color: #ffffff;
@@ -1029,7 +1037,8 @@ html {
   width: 1.5rem;
   height: 1.5rem;
 }
-.toggle.-selected .slider::after {
+.toggle:has(.check:checked) .slider::after,
+.toggle.-selected:has(.check:checked) .slider::after {
   position: absolute;
   padding: 0.25rem;
   content: "";
@@ -1050,7 +1059,6 @@ html {
   width: 1.75rem;
   height: 1.75rem;
   padding: 0;
-  left: -0.25rem;
 }
 .toggle:disabled, .toggle.disabled {
   background-color: #DDD;
@@ -1061,7 +1069,13 @@ html {
   background-color: #6F6F6F;
 }
 
-.toggle-selected:hover .slider::before, .toggle-selected.hover .slider::before, .toggle-selected:focus .slider::before, .toggle-selected.focus .slider::before, .toggle-selected:active .slider::before, .toggle-selected.pressed .slider::before {
+.toggle:has(.check:checked):hover .slider::before, .toggle:has(.check:checked).hover .slider::before, .toggle:has(.check:checked):focus .slider::before, .toggle:has(.check:checked).focus .slider::before, .toggle:has(.check:checked):active .slider::before, .toggle:has(.check:checked).pressed .slider::before,
+.toggle.-selected:has(.check:checked):hover .slider::before,
+.toggle.-selected:has(.check:checked).hover .slider::before,
+.toggle.-selected:has(.check:checked):focus .slider::before,
+.toggle.-selected:has(.check:checked).focus .slider::before,
+.toggle.-selected:has(.check:checked):active .slider::before,
+.toggle.-selected:has(.check:checked).pressed .slider::before {
   background-color: #A0C4C9;
   position: absolute;
   content: "";
@@ -1070,16 +1084,22 @@ html {
   height: 2.5rem;
   border-radius: 50%;
 }
-.toggle-selected:active .slider, .toggle-selected.pressed .slider {
+.toggle:has(.check:checked):active .slider, .toggle:has(.check:checked).pressed .slider,
+.toggle.-selected:has(.check:checked):active .slider,
+.toggle.-selected:has(.check:checked).pressed .slider {
   width: 1.75rem;
   height: 1.75rem;
   padding: 0.125rem;
 }
-.toggle-selected:disabled, .toggle-selected.disabled {
+.toggle:has(.check:checked):disabled, .toggle:has(.check:checked).disabled,
+.toggle.-selected:has(.check:checked):disabled,
+.toggle.-selected:has(.check:checked).disabled {
   background-color: #6F6F6F;
   pointer-events: none;
 }
-.toggle-selected:disabled .slider, .toggle-selected.disabled .slider {
+.toggle:has(.check:checked):disabled .slider, .toggle:has(.check:checked).disabled .slider,
+.toggle.-selected:has(.check:checked):disabled .slider,
+.toggle.-selected:has(.check:checked).disabled .slider {
   background-color: #DDD;
 }
 
@@ -1098,9 +1118,15 @@ html {
   transition: 0.4s;
 }
 .toggle-icon .check {
-  opacity: 0;
-  width: 0;
-  height: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }
 .toggle-icon .slider {
   position: relative;
@@ -1129,11 +1155,13 @@ html {
   flex-shrink: 0;
 }
 
-.toggle-icon.-selected {
+.toggle-icon:has(.check:checked),
+.toggle-icon.-selected:has(.check:checked) {
   background-color: #0D5761;
   border: none;
 }
-.toggle-icon.-selected .slider {
+.toggle-icon:has(.check:checked) .slider,
+.toggle-icon.-selected:has(.check:checked) .slider {
   margin-left: auto;
   margin-right: 0;
   background-color: #ffffff;
@@ -1142,12 +1170,66 @@ html {
   height: 1.5rem;
   box-sizing: border-box;
 }
-.toggle-icon.-selected .icon {
+.toggle-icon:has(.check:checked) .icon,
+.toggle-icon.-selected:has(.check:checked) .icon {
   color: #0D5761;
 }
 
+.toggle-icon:hover .slider::before, .toggle-icon.hover .slider::before, .toggle-icon:focus .slider::before, .toggle-icon.focus .slider::before, .toggle-icon:active .slider::before, .toggle-icon.pressed .slider::before {
+  background-color: #A0C4C9;
+  position: absolute;
+  content: "";
+  opacity: 0.5;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.toggle-icon:active .slider, .toggle-icon.pressed .slider {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0;
+}
 .toggle-icon:disabled, .toggle-icon.disabled {
+  background-color: #DDD;
   pointer-events: none;
+  border-color: #C6C6C6;
+}
+.toggle-icon:disabled .slider, .toggle-icon.disabled .slider {
+  background-color: #6F6F6F;
+}
+
+.toggle-icon:has(.check:checked):hover .slider::before, .toggle-icon:has(.check:checked).hover .slider::before, .toggle-icon:has(.check:checked):focus .slider::before, .toggle-icon:has(.check:checked).focus .slider::before, .toggle-icon:has(.check:checked):active .slider::before, .toggle-icon:has(.check:checked).pressed .slider::before,
+.toggle-icon.-selected:has(.check:checked):hover .slider::before,
+.toggle-icon.-selected:has(.check:checked).hover .slider::before,
+.toggle-icon.-selected:has(.check:checked):focus .slider::before,
+.toggle-icon.-selected:has(.check:checked).focus .slider::before,
+.toggle-icon.-selected:has(.check:checked):active .slider::before,
+.toggle-icon.-selected:has(.check:checked).pressed .slider::before {
+  background-color: #A0C4C9;
+  position: absolute;
+  content: "";
+  opacity: 0.5;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+}
+.toggle-icon:has(.check:checked):active .slider, .toggle-icon:has(.check:checked).pressed .slider,
+.toggle-icon.-selected:has(.check:checked):active .slider,
+.toggle-icon.-selected:has(.check:checked).pressed .slider {
+  width: 1.75rem;
+  height: 1.75rem;
+  padding: 0.125rem;
+}
+.toggle-icon:has(.check:checked):disabled, .toggle-icon:has(.check:checked).disabled,
+.toggle-icon.-selected:has(.check:checked):disabled,
+.toggle-icon.-selected:has(.check:checked).disabled {
+  background-color: #6F6F6F;
+  pointer-events: none;
+}
+.toggle-icon:has(.check:checked):disabled .slider, .toggle-icon:has(.check:checked).disabled .slider,
+.toggle-icon.-selected:has(.check:checked):disabled .slider,
+.toggle-icon.-selected:has(.check:checked).disabled .slider {
+  background-color: #DDD;
 }
 
 .toggle-icon .slider .icon {
@@ -1166,10 +1248,10 @@ html {
   display: none;
 }
 
-.toggle-icon .checkbox:checked + .slider .icon.-checked {
+.toggle-icon .check:checked + .slider .icon.-checked {
   display: inline-flex;
 }
-.toggle-icon .checkbox:checked + .slider .icon.-unchecked {
+.toggle-icon .check:checked + .slider .icon.-unchecked {
   display: none;
 }
 

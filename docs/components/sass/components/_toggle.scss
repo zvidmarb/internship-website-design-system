@@ -20,9 +20,15 @@ html {
   transition: $toggle-animation-duration;
 
   & .check { 
-    opacity: 0;
-    width: 0;
-    height: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 0.125rem;
+    white-space: nowrap;
   }
 
   & .slider{
@@ -50,7 +56,8 @@ html {
   }
 }
 
-.toggle.-selected {
+.toggle:has(.check:checked), 
+.toggle.-selected:has(.check:checked) {
   background-color: $color-darkgreen;
   border: none;
 
@@ -90,7 +97,7 @@ html {
         width: 1.75rem;
         height: 1.75rem;
         padding: 0;
-        left: -0.25rem;
+
       }
     }
 
@@ -104,7 +111,8 @@ html {
       }
     }
 }
-.toggle-selected {
+.toggle:has(.check:checked), 
+.toggle.-selected:has(.check:checked) {
   &:hover, &.hover, 
     &:focus, &.focus, 
     &:active, &.pressed {
@@ -158,9 +166,15 @@ html {
   transition: $toggle-animation-duration;
 
   & .check { 
-    opacity: 0;
-    width: 0;
-    height: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: auto;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
   }
 
   & .slider{
@@ -192,7 +206,8 @@ html {
   }
 }
 
-.toggle-icon.-selected {
+.toggle-icon:has(.check:checked), 
+.toggle-icon.-selected:has(.check:checked) {
   background-color: $color-darkgreen;
   border: none;
 
@@ -212,23 +227,72 @@ html {
 }
 
 .toggle-icon {
-  &:hover,
-    &.hover {
+  &:hover, &.hover, 
+    &:focus, &.focus, 
+    &:active, &.pressed {
+      .slider::before {
+        background-color: #A0C4C9;
+        position: absolute;
+        content: "";
+        opacity: 0.5;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
     }
-
-    &:focus,
-    &.focus {
-    }
-
     &:active,
     &.pressed {
+      .slider {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0;
+      }
     }
 
     &:disabled, 
     &.disabled {
-      pointer-events:none;
+      background-color: $color-old-light-grey;
+      pointer-events: none;
+      border-color: $color-old-grey;
+      & .slider {
+        background-color: $color-old-mid-grey;
+      }
     }
 }
+.toggle-icon:has(.check:checked), 
+.toggle-icon.-selected:has(.check:checked) {
+  &:hover, &.hover, 
+    &:focus, &.focus, 
+    &:active, &.pressed {
+      .slider::before {
+        background-color: #A0C4C9;
+        position: absolute;
+        content: "";
+        opacity: 0.5;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+    }
+    &:active,
+    &.pressed {
+      .slider {
+        width: 1.75rem;
+        height: 1.75rem;
+        padding: 0.125rem;
+      }
+    }
+
+    &:disabled, 
+    &.disabled {
+      background-color: $color-old-mid-grey;
+      pointer-events: none;
+      & .slider {
+        background-color: $color-old-light-grey;
+      }
+    }
+}
+
 // Additional Styles for Slider Icons
 
 .toggle-icon .slider .icon {
@@ -247,7 +311,7 @@ html {
   display: none;
 }
 
-.toggle-icon .checkbox:checked + .slider {
+.toggle-icon .check:checked + .slider {
   & .icon.-checked {
     display: inline-flex;
   }
