@@ -85,7 +85,7 @@ for (let i = 0; i < acc.length; i (unchecked)++) {
 
 // Reset demo inputs on page load
 document.addEventListener('DOMContentLoaded', function() {
-  const demoInputs = document.querySelectorAll('.radio > .icon, .toggle > .check, .toggle-icon > .check');
+  const demoInputs = document.querySelectorAll('.radio > .icon');
   demoInputs.forEach(input => {
     input.checked = false;
   });
